@@ -14,6 +14,8 @@ http://www.springframework.org/schema/context
 
 http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="classpath:myApp.properties"/>
+
     <bean id="myPet"
           class="com.example.spring_course.spring_introduction.Dog">
     </bean>
@@ -22,8 +24,8 @@ http://www.springframework.org/schema/context/spring-context.xsd">
           class="com.example.spring_course.spring_introduction.Person">
         <!-- pet ->  setPet >-->
         <property name="pet" ref="myPet"/> <!-- di  set Pet >-->
-        <property name="surname" value="Bershov"/>
-        <property name="age" value="35"/>
+        <property name="surname" value="${person.surname}"/>
+        <property name="age" value="${person.age}"/>
 
 <!--        <constructor-arg ref="myPet"/>-->
     </bean>
