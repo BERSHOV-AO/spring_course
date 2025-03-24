@@ -1,9 +1,13 @@
 package com.example.spring_course.spring_introduction;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
-public class Dog implements Pet{
+//@Component
+//@Scope("prototype")
+public class Dog implements Pet {
 
     //   private String name;
 
@@ -18,16 +22,19 @@ public class Dog implements Pet{
     public Dog() {
         System.out.println("Dog bean is created");
     }
+
     @Override
-    public void say()  {
+    public void say() {
         System.out.println("Bow-Bow");
     }
 
-    public void init() {
-        System.out.println("Class Dog: init method");
-    }
-
-    public void destroy() {
-        System.out.println("Class Dog: destroy method");
-    }
+//    @PostConstruct
+//    public void init() {
+//        System.out.println("Class Dog: init method");
+//    }
+//
+//    @PreDestroy
+//    public void destroy() {
+//        System.out.println("Class Dog: destroy method");
+//    }
 }
